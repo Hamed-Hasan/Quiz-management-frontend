@@ -17,6 +17,7 @@
     "@types/react-dom": "18.2.4",
     "@types/react-redux": "^7.1.33",
     "autoprefixer": "10.4.14",
+    "axios": "^1.6.2",
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "eslint": "8.40.0",
