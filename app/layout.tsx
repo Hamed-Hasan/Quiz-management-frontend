@@ -1,28 +1,32 @@
 "use client";
-import { configType, useQuizConfig } from '@/store';
+// RootLayout.jsx
+import React from 'react';
+import { useQuizConfig } from '@/store';
 import './globals.css';
-import { Inter } from 'next/font/google';
 import Providers from '@/lib/Providers';
-import { Toaster } from "react-hot-toast";
+import { Toaster } from 'react-hot-toast';
+import Navbar from '@/components/QuizComponents/Navbar';
+import Sidebar from '@/components/QuizComponents/Sidebar';
+import QuizPage from './quiz/page';
 
-const inter = Inter({ subsets: ['latin'] });
-
-export default function RootLayout({
-  children,
-  quiz
-}: {
-  children: React.ReactNode,
-  quiz: React.ReactNode,
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const config = useQuizConfig((state: any) => state.config);
-  let render = config.status ? quiz : children;
+  const render = config.status ? <QuizPage /> : children;
 
   return (
     <Providers>
       <html lang="en">
-        <body className={inter.className}>{render}</body>
-        <Toaster position="top-center" />
+        <body>
+          
+
+          {/* Render QuizPage or children */}
+          {render}
+
+          <Toaster position="top-center" />
+        </body>
       </html>
     </Providers>
   );
-}
+};
+
+export default RootLayout;
