@@ -5,8 +5,6 @@ import { useQuizConfig } from '@/store';
 import './globals.css';
 import Providers from '@/lib/Providers';
 import { Toaster } from 'react-hot-toast';
-import Navbar from '@/components/QuizComponents/Navbar';
-import Sidebar from '@/components/QuizComponents/Sidebar';
 import QuizPage from './quiz/page';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
