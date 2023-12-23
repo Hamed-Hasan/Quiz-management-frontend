@@ -6,6 +6,14 @@ import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import Link from 'next/link';
 import { useUserRegisterMutation } from '@/redux/api/authApi';
 
+interface ApiResponse {
+  data?: {
+    email: string; 
+    password: string;
+  };
+  error?: unknown;
+  status?: number;
+}
 
 const Signup = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -17,32 +25,40 @@ const Signup = () => {
   
     const handleSignup = async (e: React.FormEvent) => {
       e.preventDefault();
-  
+    
       // Basic client-side validation
       if (!email || !password) {
         toast.error('Please fill in all fields.');
         return;
       }
-  
+    
       try {
         // Call the registration API
         const registerData = { email, password };
-        await registerUser(registerData);
-  
-        // Display success message using React Hot Toast
-        toast.success('Registration successful! ');
-  
-        // Redirect to the login page after a short delay
-        setTimeout(() => {
-          router.push('/');
-        }, 700);
+        const response: ApiResponse = await registerUser(registerData);
+        
+        // Check if the registration was successful (status code 200)
+        if (response.data?.email) {
+          // Display success message using React Hot Toast
+          toast.success(`Registration successful! Welcome, ${response.data.email}!`);
+    
+          // Redirect to the login page after a short delay
+          setTimeout(() => {
+            router.push('/');
+          }, 700);
+        } else {
+          // If registration is not successful, show an error message and log the response
+          console.error('Registration failed. API Response:', response);
+          toast.error('Registration failed. Please try again.');
+        }
       } catch (error) {
         // Handle error (you can show an error message)
         console.error('Registration failed', error);
         toast.error('Registration failed. Please try again.');
       }
     };
-  
+    
+    
     const togglePasswordVisibility = () => {
       setShowPassword((prevShowPassword) => !prevShowPassword);
     };
