@@ -14,6 +14,10 @@ export const profileApi = baseApi.injectEndpoints({
         url: `${PROFILE_URL}/specific-profile/${userId}`,
         method: "GET",
       }),
+      // Define the refetch function
+      onQueryStarted: async (arg, { queryFulfilled }) => {
+        await queryFulfilled;
+      },
     }),
     updateProfile: build.mutation({
       query: ({ userId, payload }) => ({
@@ -30,6 +34,7 @@ export const profileApi = baseApi.injectEndpoints({
     }),
   }),
 });
+
 
 export const {
   useGetProfilesQuery,

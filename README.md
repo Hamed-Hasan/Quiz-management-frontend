@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Quiz Management App
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Quiz Management App is a robust application designed to facilitate the creation, management, and tracking of quizzes. Developed using Next.js, Typescript, Redux, Express, PostgreSQL, and Prisma, this app provides a seamless and engaging experience for both admins and performers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🎭 User Authentication:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Roles: Admin, Performer.
+- Effortless sign-up, log-in, and account management.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 📝 Quiz Management:
 
-## Learn More
+- Admins can create, edit, and delete quizzes.
+- Intuitive categorization (e.g., frontend, fullstack).
+- Support for both single and multiple-choice questions.
 
-To learn more about Next.js, take a look at the following resources:
+### 🎯 Quiz Taking:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Performers select a category and answer 10 random questions.
+- Instant feedback and real-time score calculation.
+- Leaderboard showcasing top performers.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 📊 Score Tracking:
 
-## Deploy on Vercel
+- Efficient storage and display of user scores.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🛠️ Database:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Utilizes PostgreSQL with Prisma ORM for optimal data handling.
+
+### 🚨 Error Handling:
+
+- Robust mechanisms ensure a smooth user experience.
+
+### 🌐 User-Friendly Interface:
+
+- Next.js and Redux contribute to a clean and intuitive UI.
+
+## Setup
+
+1. **Clone the repo:**
+   ```bash
+   git clone https://github.com/Hamed-Hasan/Quiz-management-frontend.git
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure PostgreSQL and Prisma:**
+   - Set up a PostgreSQL database.
+   - Configure the connection details in the Prisma configuration file (`prisma/schema.prisma`).
+
+4. **Run the app seamlessly:**
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+- Admins log in to effortlessly manage quizzes.
+- Performers sign up or log in for a seamless quiz-taking experience.
+- Create, manage, and partake in quizzes with ease.
+
+## Contributing
+
+1. Fork the repository.
+2. Develop your feature in a dedicated branch.
+3. Submit a pull request for seamless integration.
+
+## License
+
+MIT License - [Details](link-to-license)
+
+Feel free to open issues for feedback or contribute to enhancing the quiz experience. Happy quizzing! 🧠✨
