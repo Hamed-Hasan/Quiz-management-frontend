@@ -43,6 +43,9 @@ const Login = () => {
       
           // Check if the login was successful (status code 200)
           if (response.data?.accessToken) {
+            // Set the accessToken in localStorage
+            localStorage.setItem('accessToken', response.data.accessToken);
+      
             // Display success message using React Hot Toast
             toast.success('Login successful!');
       
@@ -68,7 +71,6 @@ const Login = () => {
           }
         }
       };
-      
       
       
       
