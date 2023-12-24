@@ -1,9 +1,13 @@
 export enum tagTypes {
-    user = "user",
-    admin = "admin",
-  }
-  
-  export const tagTypesList = [
-      tagTypes.user,
-      tagTypes.admin,
-  ];
+  user = "user",
+  quiz = "quiz",
+  category = "category",
+  question = "question",
+}
+
+export const tagTypesList = [
+  tagTypes.user,
+  tagTypes.quiz,
+  tagTypes.category,
+  tagTypes.question,
+];
