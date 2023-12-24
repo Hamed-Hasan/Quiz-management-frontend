@@ -1,3 +1,32 @@
-node_modules
+
 .env
 .vercel
+
+# .gitignore
+/node_modules
+/dist
+/build
+/.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Dependency directories
+/jspm_packages/
+/bower_components/
+
+# Output of 'npm run build'
+/build/
+
+# dotenv environment variables file
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Visual Studio Code
+.vscode/
