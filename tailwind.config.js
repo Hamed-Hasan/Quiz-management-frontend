@@ -1,11 +1,14 @@
+const { withUt } = require("uploadthing/tw");
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withUt({
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -15,6 +18,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        "hero-pattern": "url('/herobg.png')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -71,8 +77,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-animate"),
-    require("daisyui"),
-  ],
-}
+  plugins: [require("tailwindcss-animate")],
+});
